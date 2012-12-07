@@ -1,0 +1,8 @@
+div.chat-box id="#{@box_id}"
+  div.header = chatter.email
+
+  div.convo id="convo-#{@box_id}"
+    = render partial: "messages/chat_row", locals: {message: message}
+
+  = render partial: "messages/chat_type_box", locals: {recipient_id: chatter.id}
+  

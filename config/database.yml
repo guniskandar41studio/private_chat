@@ -8,14 +8,14 @@ default: &default
 development:
   <<: *default
   database: brew_development
-  password: root
+  password:
 
 test:
   <<: *default
   database: brew_test
-  password: root
+  password:
 
 production:
   <<: *default
   database: brew
-  password: root
+  password:

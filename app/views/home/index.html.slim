@@ -1,2 +1,15 @@
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+h1 Online Users
+- @online_users.each do |user|
+  ul
+    li
+      = user.email
+      br
+
+h1 New message
+
+== render 'messages/form'
+
+= subscribe_to "/messages/private/#{current_user.id}"
+
+h1 CHAT AREAS
+div#chat-areas

@@ -5,7 +5,7 @@ html
     meta name="description" content=""
     meta name="author" content=""
     = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    = javascript_include_tag "application", "jquery.typing.min.js"
     csrf_meta_tags
     == yield(:head)
 
@@ -23,3 +23,14 @@ html
               == render "layouts/messages"
               == yield
           footer
+
+  javascript:
+    $('#chat-type-field').typing({
+      start: function (event, $elem) {
+          $elem.css('background', '#fa0');
+      },
+      stop: function (event, $elem) {
+          $elem.css('background', '#f00');
+      },
+      delay: 2000
+    });

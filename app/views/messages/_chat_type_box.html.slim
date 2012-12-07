@@ -1,0 +1,15 @@
+= form_for Message.new, remote: true do |f|
+  = f.text_field :text, id: 'chat-type-field'
+
+  = hidden_field_tag "message[recipient_id]", recipient_id
+
+javascript:
+  $('#chat-type-field').typing({
+    start: function (event, $elem) {
+        $elem.css('background', '#fa0');
+    },
+    stop: function (event, $elem) {
+        $elem.css('background', '#f00');
+    },
+    delay: 1000
+  });

@@ -56,3 +56,9 @@ gem 'has_scope'
 gem 'capistrano'
 gem 'turbolinks'
 gem 'client_side_validations'
+
+
+
+gem 'private_pub'
+gem 'redis'
+gem 'redis-objects'

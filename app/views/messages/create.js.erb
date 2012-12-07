@@ -1,0 +1,11 @@
+<%- @listeners.each do |user| %>
+  <% publish_to "/messages/private/#{user.id}" do %>
+   
+    if ($('#<%= @box_id %>').size() > 0){
+	    $('#convo-<%= @box_id %>').append("<%= render partial: "messages/chat_row", locals: {message: @message} %>");
+    }else {
+	//		$("<div id='" + box_id + "' class='chat-box'><div>").html("<%= @message.text %><br/>").appendTo('#chat-areas');
+			$("#chat-areas").append("<%=j render partial: 'chat_box.html', locals: {chatter: @listeners.detect {|listener| listener.id != user.id }, box_id: @box_id, message: @message} %>")
+		}
+	<%- end %>	
+<%- end %>
