@@ -1,1 +1,15 @@
-Rails 2.3.9 BaseApp by 41studio
+Rails private chatting application.
+
+- Integrated with devise, allow you to chat with other online users.
+- Tracking online/offline status of users.
+- Box to box chat interface.
+
+Server Requirements :
+- Faye Server :
+  rackup faye.ru -s thin -E production
+
+- Redis Server:
+  redis-server
+
+Inspired and use code from : 
+https://github.com/ryanb/private_pub
